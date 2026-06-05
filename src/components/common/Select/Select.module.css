@@ -1,0 +1,76 @@
+.select {
+  border: 2px solid var(--gray-color);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  position: relative;
+}
+
+.select-head {
+  padding: 20px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black-color);
+}
+
+.placeholder {
+  color: var(--placeholder-color);
+}
+
+.arrow {
+  transition: all 0.3s;
+}
+
+.select-head--opened .arrow {
+  transform: rotateZ(-90deg);
+}
+
+.options {
+  /* position: absolute; */
+  /* top: 100%; */
+  border-top: 2px solid transparent;
+  /* border: 2px solid var(--gray-color); */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  overflow-y: auto;
+  display: none;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  /* transition: all 0.5s; */
+}
+
+.options--open {
+  border-top: 2px solid var(--gray-color);
+  padding: 10px 0px;
+  /* max-height: 500px; */
+  display: flex;
+}
+
+.option {
+  padding: 15px;
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black-color);
+}
+
+.option--choosen {
+  background: var(--gray-color);
+}
+
+.option:hover {
+  background: var(--gray-color);
+}

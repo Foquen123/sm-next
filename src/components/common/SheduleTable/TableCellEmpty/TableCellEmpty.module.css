@@ -1,0 +1,17 @@
+.cell {
+  border-bottom: 2px solid var(--gray-color);
+  border-right: 2px solid var(--gray-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.plus {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.cell:hover .plus {
+  opacity: 1;
+}

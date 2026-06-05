@@ -1,0 +1,46 @@
+.grid-cell {
+  /* border-bottom: 2px solid var(--gray-color);
+  border-right: 2px solid var(--gray-color); */
+  border: 2px solid var(--gray-color);
+  padding: 25px 10px;
+  max-height: 139px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.grid-cell.normal svg {
+  display: none;
+}
+
+.grid-cell.warning .circle-stroke {
+  stroke: var(--accent-color);
+}
+
+.grid-cell.warning .path {
+  fill: var(--accent-color);
+}
+
+.grid-cell.warning .circle-fill {
+  fill: var(--accent-color);
+}
+
+/*  */
+
+.grid-cell.attention .circle-stroke {
+  stroke: var(--lightblue-color);
+}
+
+.grid-cell.attention .path {
+  fill: var(--lightblue-color);
+}
+
+.grid-cell.attention .circle-fill {
+  fill: var(--lightblue-color);
+}

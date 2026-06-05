@@ -1,0 +1,27 @@
+.link {
+  border-radius: 15px;
+  padding: 18px 30px;
+
+  display: flex;
+  align-content: inherit;
+  justify-content: start;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--white-color);
+  background: none;
+
+  transition: all 0.3s;
+}
+
+.active {
+  background: var(--white-color);
+  font-family: var(--font-family);
+  color: var(--black-color);
+}
+
+.link:hover {
+  background: var(--hover-color-1);
+}

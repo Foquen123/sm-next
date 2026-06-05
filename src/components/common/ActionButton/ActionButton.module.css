@@ -1,0 +1,56 @@
+.button-default {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--white-color);
+
+  border-radius: 15px;
+  padding: 15px 30px;
+  background: var(--primary--color);
+  transition: all .3s;
+}
+
+.button-default:hover {
+  background: var(--primary-hover-color);
+}
+
+.button-edit {
+  border-radius: 15px;
+  padding: 15px 25px;
+  background: var(--gray-color);
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black-color);
+  transition: all .3s;
+}
+
+.button-edit:hover {
+  transform: scale(1.04);
+}
+
+.button-delete {
+  border-radius: 15px;
+  padding: 15px 25px;
+  background: var(--accent-color);
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black-color);
+  transition: all .3s;
+}
+
+.button-delete:hover {
+  transform: scale(1.05);
+}
+
+.button:disabled{
+  opacity: .5;
+  pointer-events: none;
+  user-select: none;
+}

@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.classrooms-list-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.classrooms-list-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* max-height: 70vh; */
+  /* overflow-y: auto; */
+  height: 100%;
+  overflow-y: auto;
+}
+
+.classroom-list-item-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switcher-wrapper {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black-color);
+
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}

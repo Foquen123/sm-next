@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  background: var(--white-color);
+  border-radius: 25px;
+  padding: 20px;
+  gap: 25px;
+  align-items: center;
+}
+
+.color-rect {
+  width: 70px;
+  height: 42px;
+  border-radius: 15px;
+}
+
+.name {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--black-color);
+  margin-right: auto;
+}

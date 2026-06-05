@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.sub-list-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sub-list-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* max-height: 70vh; */
+  /* overflow-y: auto; */
+  height: 100%;
+  overflow-y: auto;
+}
