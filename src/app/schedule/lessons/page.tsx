@@ -8,6 +8,7 @@ import LoadingSpinner from '@/components/common/LoadingSpinner/LoadingSpinner';
 import { useLesson } from '@/hooks/useLesson';
 import { LessonRead } from '@/interfaces/lesson';
 import EditLessonModal from '@/components/pages/lessons-page/EditLessonModal/EditLessonModal';
+import { useDeleteLesson } from '@/hooks/useLessonMutation';
 // import { DELAY_TO_CLOSE, DELAY_TO_OPEN } from '../../constants/global_constants';
 // import { useLessonStore } from '../../store/LessonStore';
 // import EditLessonModal from '../../components/Modals/EditLessonModal/EditLessonModal';
@@ -20,6 +21,7 @@ export default function LessonsPage() {
   const [selectedLesson, setSelectedLesson] = useState<LessonRead | null>(null);
 
   const { data: lessons, isLoading } = useLesson();
+  const { mutate: deleteLesson } = useDeleteLesson();
 
   const openEditLessonModal = (lesson: LessonRead) => {
     setSelectedLesson(lesson);
@@ -42,7 +44,7 @@ export default function LessonsPage() {
           <ActionButton
             buttonType="default"
             onClick={() => {
-              openAddLessonModal()
+              openAddLessonModal();
             }}
           >
             Добавить урок
@@ -54,7 +56,7 @@ export default function LessonsPage() {
                   .map((t) => (
                     <LessonCard
                       onDelete={() => {
-                        // lessonsStore.deleteLesson(t.id)
+                        deleteLesson({ data: { id: t.id } });
                       }}
                       key={t.id}
                       lesson={t}

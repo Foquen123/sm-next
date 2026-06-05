@@ -12,9 +12,11 @@ import { teachersReadAll } from '@/actions/teacher';
 import { useTeacher } from '@/hooks/useTeacher';
 import { TeacherRead } from '@/interfaces/teacher';
 import EditTeacherModal from '@/components/pages/teachers-page/EditTeacherModal/EditTeacherModal';
+import { useDeleteTeacher } from '@/hooks/useTeacherMutation';
 
 export default function TeachersPage() {
   const { data: teachers } = useTeacher();
+  const { mutate: deleteTeacher } = useDeleteTeacher();
 
   // const patternStore = usePatternStore((store) => store);
 
@@ -75,7 +77,7 @@ export default function TeachersPage() {
                         openEditTeacherModal(t);
                       }}
                       onDelete={() => {
-                        // teachersStore.deleteTeacher(t.id)
+                        deleteTeacher({ data: { id: t.id } });
                       }}
                     ></TeacherCard>
                   ))}
