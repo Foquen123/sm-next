@@ -1,7 +1,7 @@
-import type { IPattern } from '../../interfaces/Pattern.interface';
+import { PatternRead } from '@/interfaces/pattern';
 
 export interface TeacherPatternProps {
-  pattern: IPattern;
+  pattern: PatternRead;
   color: string;
   count?: number;
 }
