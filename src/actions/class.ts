@@ -85,11 +85,15 @@ export async function classesDelete({ data }: { data: ClassDelete }) {
 
 export async function classesCreate() {
   try {
-    const displayOrders = await prisma.class
-      .findMany({
-        select: { displayOrder: true },
-      })
-      .then((e) => e.map((e) => e.displayOrder));
+    const classes = await prisma.class.findMany();
+    let displayOrders = [0];
+    if (classes.length !== 0) {
+      displayOrders = await prisma.class
+        .findMany({
+          select: { displayOrder: true },
+        })
+        .then((e) => e.map((e) => e.displayOrder));
+    }
 
     const teacher = await prisma.teacher.findFirst();
     if (teacher) {

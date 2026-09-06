@@ -278,7 +278,7 @@ const TableContent = memo(function TableContent({
                 // c.dayOfWeek === dayOfWeek,
                 c.dayOfWeek === deferredDayOfWeek,
             );
-            if(!currentCell) return null;
+            if (!currentCell) return null;
             return (
               <TableCell
                 key={`${i}-${j}`}
@@ -378,6 +378,8 @@ function Table({
       return [];
     }
   }, [weeklyShedule, classes, dayOfWeek]);
+
+  console.log(signalsDay);
 
   if (scheduleLoading || classesLoading)
     return <LoadingSpinner></LoadingSpinner>;

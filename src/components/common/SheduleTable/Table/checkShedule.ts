@@ -6,6 +6,7 @@
 //   colCount: number,
 // );
 
+import { ROWS_COUNT } from "@/config/global_constants";
 import { ClassRead } from "@/interfaces/class";
 import { ScheduleCellRead } from "@/interfaces/schedule-cell";
 import { SignalType } from "@/types/signal";
@@ -52,7 +53,7 @@ export default function checkShedule(
   colCount: number,
   classes: ClassRead[],
 ): SignalType[] {
-  const result: SignalType[] = Array<SignalType>(8).fill('normal');
+  const result: SignalType[] = Array<SignalType>(ROWS_COUNT-1).fill('normal');
 
   const getRowFromTable = (index: number): ScheduleCellRead[] => {
     const row: ScheduleCellRead[] = [];
@@ -127,64 +128,3 @@ export default function checkShedule(
   //   console.log(row);
   // }
 }
-
-// export default function checkShedule(
-//   shedule: ISheduleCell[][],
-//   rowCount: number,
-//   colCount: number,
-// ): SignalType[] {
-//   const result: SignalType[] = Array<SignalType>(8).fill('normal');
-
-//   const getRowFromTable = (index: number): ISheduleCell[] => {
-//     const row: ISheduleCell[] = [];
-//     for (let j = 0; j < colCount; j++) {
-//       row.push(shedule[j][index]);
-//     }
-//     return row;
-//   };
-
-//   const findConflictsInRow = (row: ISheduleCell[]): number[] => {
-//     const result: number[] = [];
-
-//     for (let i = 0; i < row.length; i++) {
-//       if (row[i].isEmpty) continue;
-//       const countRepetativeElements = row.filter(
-//         (e) => e.lesson1?.classroom.name === row[i].lesson1?.classroom.name,
-//       ).length;
-//       if (countRepetativeElements > 1) result.push(i);
-//     }
-//     return result;
-//   };
-
-//   // поиск окон
-//   let windowsIndexes: number[] = [];
-//   for (let i = 0; i < colCount; i++) {
-//     const windows = findWindowsInColumn(shedule[i]);
-//     windowsIndexes = [...new Set([...windowsIndexes, ...windows])];
-//   }
-
-//   for (const i of windowsIndexes) {
-//     result[i] = 'attention';
-//   }
-
-//   // console.log(windowsIndexes);
-
-//   // поиск конфликтов
-//   for (let i = 0; i < rowCount; i++) {
-//     const row = getRowFromTable(i);
-//     const conflicts = findConflictsInRow(row);
-//     if (conflicts.length !== 0) {
-//       result[i] = 'warning';
-//     }
-//   }
-
-//   return result;
-
-//   // for (let i = 0; i < rowCount; i++) {
-//   //   const row: ISheduleCell[] = [];
-//   //   for (let j = 0; j < colCount; j++) {
-//   //     row.push(shedule[j][i]);
-//   //   }
-//   //   console.log(row);
-//   // }
-// }

@@ -1,7 +1,7 @@
 export const DELAY_TO_OPEN = 100;
 export const DELAY_TO_CLOSE = 400;
 
-export const ROWS_COUNT = 9;
+export const ROWS_COUNT = 8;
 export const DAYS_OF_WEEK_COUNT = 6;
 
 export const DAYS_OF_WEEK = [
